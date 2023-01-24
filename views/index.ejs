@@ -1,1 +1,15 @@
-<h1>ejs template</h1>
+<%- include('header'); %>
+<div id="weather" class="container s12 m4 l8" style="text-align: center">
+    <h3 id="description"></h3>
+    <h2 id="temp"></h2>
+    <h2 id="location"></h2>
+</div>
+<div id="change-city" class="container s12 m4 l8 z-depth-5">
+    <form class="center-align">
+        <label for="city-name" style="font-size: 15px">City</label>
+        <input type="text" id="city-name">
+        <input type="submit" class="btn" value="Save changes">
+    </form>
+    <br>
+</div>
+<%- include('footer'); %>
