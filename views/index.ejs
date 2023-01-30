@@ -1,5 +1,6 @@
 <%- include('header'); %>
 <div id="weather" class="container s12 m4 l8" style="text-align: center">
+    <% if (error === null) {%>
     <h3 id="description"><%= description %></h3>
     <h2 id="temp"><%= temp %></h2>
     <h2 id="location"><%= city %></h2>
@@ -10,6 +11,11 @@
         <input type="text" id="city-name" class="form-control" name="cityname">
         <input type="submit" class="btn" value="Save changes">
     </form>
-    <br>
+    <% } else { %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+        <a class="btn btn-secondary text-white" href="/" role="button">Try again</a>
+    <% } %>
 </div>
 <%- include('footer'); %>
